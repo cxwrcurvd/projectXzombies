@@ -67,3 +67,25 @@ exit
 
 
 Все скриншоты в папке docker/img
+
+![23230](../img/2324027.7000000477_image.png)
+
+Windows метод
+docker run -d ^
+  --name portainer ^
+  -p 9000:9000 ^
+  -p 9443:9443 ^
+  -v /var/run/docker.sock:/var/run/docker.sock ^
+  -v portainer_data:/data ^
+  --restart unless-stopped ^
+  portainer/portainer-ce:latest
+
+Linux WSL Mac метод
+docker run -d \
+  --name portainer \
+  -p 9000:9000 \
+  -p 9443:9443 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  --restart unless-stopped \
+  portainer/portainer-ce:latest
